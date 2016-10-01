@@ -21,6 +21,9 @@
     "fs": "0.0.1-security",
     "hapi": "^15.1.1",
     "path": "^0.12.7",
+    "pg": "^6.1.0",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^3.24.3",
     "underscore": "^1.8.3"
   }
 }

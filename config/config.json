@@ -2,11 +2,27 @@
     "local": {
         "node": {
             "port": 8000
+        },
+        "sequelize": {
+            "username" : "postgres",
+            "password" : "postgres",
+            "database" : "matchpoint",
+            "host"     : "127.0.0.1",
+            "port"     : 5432,
+            "dialect"  : "postgres"
         }
     },
     "dev" : {
         "node": {
             "port": 8000
+        },
+        "sequelize": {
+            "username" : "postgres",
+            "password" : "postgres",
+            "database" : "matchpoint",
+            "host"     : "127.0.0.1",
+            "port"     : 5432,
+            "dialect"  : "postgres"
         }
     }
 }

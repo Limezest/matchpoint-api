@@ -26,7 +26,7 @@ CREATE TABLE CLUB
     color       CHAR(15),
     mail        CHAR(50),
     email       CHAR(50) NOT NULL UNIQUE,
-    phone       CHAR(20)UNIQUE,
+    phone       CHAR(20) UNIQUE,
     CONSTRAINT clubID PRIMARY KEY(clubID)
 );
 

@@ -1,5 +1,9 @@
 # matchpoint-api
-Project description
+
+## TODO:
+Installation / Config
+
+##Project description
 
 The main idea is to create a platform where every sport club can register itself, providing services to their members : calendars, leaderboards, chatrooms, photo sharing, etc.
 
