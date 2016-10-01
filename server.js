@@ -34,31 +34,18 @@ db.sequelize.sync().then(function () {
 
 
 
-    /******DATABASE BULLSHIT********/
-    // var club = {
-    //     adminID : 1,
-    //     name    : "name",
-    //     picture : "picture",
-    //     logo    : "logo",
-    //     color   : "color",
-    //     mail    : "mail",
-    //     email   : "email",
-    //     phone   : "phone",
+    /************DATABASE BULLSHIT************/
+    // var utilisateur = {
+    //     firstname   : "jean",
+    //     lastname    : "eude",
+    //     mail        : "mail",
+    //     email       : "email1",
+    //     phone       : "phone1",
+    //     birthday    : "birthday",
+    //     isAdmin     : false,
+    //     isPlayer    : false,
+    //     isCoach     : false
     // };
-
-
-    // db.Club.create(club, {'logging': true}).then(function(clubINSTANCE) {
-    //     console.log(clubINSTANCE);
-        
-    //     clubINSTANCE.save().then(() => console.log('oui'))
-    //     .catch(function(err) {
-    //         console.log(err);
-    //     });
-
-    // }).catch(function (err) {
-    //     console.log(err);
-    // });
-
     // db.Utilisateur.create(utilisateur).then(function(utilisateurINSTANCE) {
     //     console.log(utilisateurINSTANCE);
         
@@ -71,6 +58,9 @@ db.sequelize.sync().then(function () {
     //     console.log(err);
     // });
     
+    // db.Utilisateur.findAll().then(function(utilisateurs) {
+    //     console.log(utilisateurs);
+    // })
 
 
 }).catch(function (err) {

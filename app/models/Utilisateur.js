@@ -47,5 +47,7 @@ module.exports = function(sequelize, Datatypes) {
             defaultValue: false,
             allowNull   : true
         }
+    }, {
+        freezeTableName: true
     });
 }
