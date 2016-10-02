@@ -37,6 +37,7 @@ db.sequelize.sync({force: true}).then(function () {
 
     /************DATABASE BULLSHIT************/
     var utilisateurDATA = {
+        id: 1,
         firstname   : "firstname",
         lastname    : "lastname",
         mail        : "mail",
@@ -50,8 +51,86 @@ db.sequelize.sync({force: true}).then(function () {
     db.Utilisateur.create(utilisateurDATA).then(function(utilisateurINSTANCE) {
         console.log(utilisateurINSTANCE);
         
-        utilisateurINSTANCE.save().then(() => console.log('oui'))
-        .catch(function(err) {
+        utilisateurINSTANCE.save().then(function () {
+
+            var clubsList = [
+                {
+                    clubID: 11623,
+                    name: "U.S. NANTUATIENNE",
+                    adminID: 1,
+                    email: "oui1@gmail.com"
+                },
+                {
+                    clubID: 183754,
+                    name: "FOOTBALL CLUB COTIERE-LUENAZ",
+                    adminID: 1,
+                    email: "oui2@gmail.com"
+                },
+                {
+                    clubID: 2220,
+                    name: "U.S. ARBENT MARCHON",
+                    adminID: 1,
+                    email: "oui3@gmail.com"
+                },
+                {
+                    clubID: 2235,
+                    name: "A.S. MONTREVEL",
+                    adminID: 1,
+                    email: "oui4@gmail.com"
+                },
+                {
+                    clubID: 5857,
+                    name: "ET. S. FOISSIAT ETREZ",
+                    adminID: 1,
+                    email: "oui5@gmail.com"
+                },
+                {
+                    clubID: 155001,
+                    name: "U. S. LE GRAND COLOMBIER",
+                    adminID: 1,
+                    email: "oui6@gmail.com"
+                },
+                {
+                    clubID: 13313,
+                    name: "O. DE ST DENIS LES BOURG",
+                    adminID: 1,
+                    email: "oui7@gmail.com"
+                },
+                {
+                    clubID: 2161,
+                    name: "F.C. LA VALLIERE",
+                    adminID: 1,
+                    email: "oui8@gmail.com"
+                },
+                {
+                    clubID: 138710,
+                    name: "F. C. BRESSANS",
+                    adminID: 1,
+                    email: "oui9@gmail.com"
+                },
+                {
+                    clubID: 161261,
+                    name: "FOOTBALL CLUB DE BELLEY",
+                    adminID: 1,
+                    email: "oui10@gmail.com"
+                },
+                {
+                    clubID: 25312,
+                    name: "AIN SUD F.",
+                    adminID: 1,
+                    email: "oui11@gmail.com"
+                },
+                {
+                    clubID: 7805,
+                    name: "ESB FOOTBALL MARBOZ",
+                    adminID: 1,
+                    email: "oui12@gmail.com"
+                }
+            ];
+            db.Club.bulkCreate(clubsList)
+                .then((clubINSTANCE) => {clubINSTANCE.save();})
+
+        }).catch(function(err) {
             console.log(err);
         });
 
@@ -60,7 +139,7 @@ db.sequelize.sync({force: true}).then(function () {
     });
 
     var clubDATA = {
-        adminID     : "1",
+        adminID     : 1,
         name        : "Club des vainqueurs",
         picture     : "",
         logo        : "",
@@ -82,7 +161,6 @@ db.sequelize.sync({force: true}).then(function () {
         console.log(err);
     });
 
-    
     // db.Utilisateur.findAll().then(function(utilisateurs) {
     //     console.log(utilisateurs);
     // })
