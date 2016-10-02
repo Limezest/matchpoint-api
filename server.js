@@ -17,14 +17,15 @@ db.sequelize.sync({force: true}).then(function () {
         }
     });
 
-    // Catch all undefined routes
-    server.route({
-        method  : '*',
-        path    : '/{p*}',
-        handler : function (request, reply) {
-            return reply('The page was not found').code(404);
-        }
-    });
+    // // Catch all undefined routes
+    // server.route({
+    //     method  : '*',
+    //     path    : '/{p*}',
+    //     handler : function (request, reply) {
+    //         return reply('The page was not found').code(404);
+    //     }
+    // });
+
     // Load routes
     server.route(routes);
 
@@ -35,28 +36,52 @@ db.sequelize.sync({force: true}).then(function () {
 
 
     /************DATABASE BULLSHIT************/
-    // var utilisateur = {
-    //     firstname   : "firstname",
-    //     lastname    : "lastname",
-    //     mail        : "mail",
-    //     email       : "email1",
-    //     phone       : "phone1",
-    //     birthday    : "birthday",
-    //     isAdmin     : false,
-    //     isPlayer    : false,
-    //     isCoach     : false
-    // };
-    // db.Utilisateur.create(utilisateur).then(function(utilisateurINSTANCE) {
-    //     console.log(utilisateurINSTANCE);
+    var utilisateurDATA = {
+        firstname   : "firstname",
+        lastname    : "lastname",
+        mail        : "mail",
+        email       : "email1",
+        phone       : "phone1",
+        birthday    : "birthday",
+        isAdmin     : false,
+        isPlayer    : false,
+        isCoach     : false
+    };
+    db.Utilisateur.create(utilisateurDATA).then(function(utilisateurINSTANCE) {
+        console.log(utilisateurINSTANCE);
         
-    //     utilisateurINSTANCE.save().then(() => console.log('oui'))
-    //     .catch(function(err) {
-    //         console.log(err);
-    //     });
+        utilisateurINSTANCE.save().then(() => console.log('oui'))
+        .catch(function(err) {
+            console.log(err);
+        });
 
-    // }).catch(function (err) {
-    //     console.log(err);
-    // });
+    }).catch(function (err) {
+        console.log(err);
+    });
+
+    var clubDATA = {
+        adminID     : "1",
+        name        : "Club des vainqueurs",
+        picture     : "",
+        logo        : "",
+        color       : "Rose",
+        mail        : "",
+        email       : "vainqueurs@ffbb.fr",
+        phone       : ""
+    };
+
+    db.Club.create(clubDATA).then(function(clubINSTANCE) {
+        console.log(clubINSTANCE);
+        
+        clubINSTANCE.save().then(() => console.log('oui'))
+        .catch(function(err) {
+            console.log(err);
+        });
+
+    }).catch(function (err) {
+        console.log(err);
+    });
+
     
     // db.Utilisateur.findAll().then(function(utilisateurs) {
     //     console.log(utilisateurs);

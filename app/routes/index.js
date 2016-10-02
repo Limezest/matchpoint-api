@@ -16,8 +16,7 @@ fs.readdirSync(__dirname).filter(function (f) {
     for (var i = 0; i < mod.length; i++) {
         mod[i].config.cors = {
             origin      : ['*'],
-            credentials : true,
-            matchOrigin : true
+            credentials : true
         };
 
         mod[i].config.timeout = {
