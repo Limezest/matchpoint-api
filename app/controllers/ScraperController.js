@@ -10,6 +10,7 @@ ScraperController.prototype = (function () {
         scrape: function (req, res) {
             var clubID = req.params.clubID;
             var weekID = req.params.weekID;
+            var csID = req.params.csID;
 
             // res.header('Content-Type', 'application/json');
 
@@ -39,7 +40,8 @@ ScraperController.prototype = (function () {
 
                         championnat = data.text();
 
-                        if (championnat == 'EXCELLENCE SENIORS - POULE A') {
+                        // if (championnat == 'EXCELLENCE SENIORS - POULE A') {
+                        if (encodeURI(championnat) == encodeURI(csID)) {
                             json.championnat = championnat;
                             json.date = data.next().find('h4').text();
                             json.team1 = data.next().find('.eqleft > a').text();
