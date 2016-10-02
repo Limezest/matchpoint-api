@@ -6,11 +6,21 @@ module.exports = function(sequelize, Datatypes) {
         },
         level               : {
             type    : Datatypes.INTEGER,
-            allowNull   : true
+            allowNull   : true,
+            references  : {
+                model   : 'CS_Level',
+                key     : 'id',
+                deferrable: sequelize.Deferrable.INITIALLY_IMMEDIATE
+            }
         },
         age                 : {
             type    : Datatypes.INTEGER,
-            allowNull   : true
+            allowNull   : true,
+            references  : {
+                model   : 'CS_Age',
+                key     : 'id',
+                deferrable: sequelize.Deferrable.INITIALLY_IMMEDIATE
+            }
         },
         masculinFeminin     : {
             type    : Datatypes.STRING,

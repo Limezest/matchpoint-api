@@ -5,7 +5,7 @@ var routes              = require('./app/routes');
 var db                  = require('./app/models');
 
 /**/
-db.sequelize.sync().then(function () {
+db.sequelize.sync({force: true}).then(function () {
     var server = new Hapi.Server();
 
     server.connection({
@@ -36,8 +36,8 @@ db.sequelize.sync().then(function () {
 
     /************DATABASE BULLSHIT************/
     // var utilisateur = {
-    //     firstname   : "jean",
-    //     lastname    : "eude",
+    //     firstname   : "firstname",
+    //     lastname    : "lastname",
     //     mail        : "mail",
     //     email       : "email1",
     //     phone       : "phone1",

@@ -1,26 +1,22 @@
 module.exports = function(sequelize, Datatypes) {
-    return sequelize.define('Team', {
-        clubID  : {
-            type        : Datatypes.INTEGER,
+    return sequelize.define('Utilisateur_Team', {
+        userID   : {
+            type    : Datatypes.INTEGER,
             allowNull   : false,
-            references  : {
-                model   : 'Club',
-                key     : 'id',
-                deferrable: sequelize.Deferrable.INITIALLY_IMMEDIATE
-            }
-        },
-        coachID : {
-            type        : Datatypes.INTEGER,
-            allowNull   : true,
             references  : {
                 model   : 'Utilisateur',
                 key     : 'id',
                 deferrable: sequelize.Deferrable.INITIALLY_IMMEDIATE
             }
         },
-        name    : {
-            type        : Datatypes.STRING,
-            allowNull   : true
+        teamID   : {
+            type    : Datatypes.INTEGER,
+            allowNull   : false,
+            references  : {
+                model   : 'Team',
+                key     : 'id',
+                deferrable: sequelize.Deferrable.INITIALLY_IMMEDIATE
+            }
         }
     }, {
         freezeTableName: true

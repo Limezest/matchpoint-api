@@ -1,8 +1,13 @@
 module.exports = function(sequelize, Datatypes) {
     return sequelize.define('Club', {
         adminID	: {
-            type    : Datatypes.INTEGER,
-            allowNull   : false
+            type        : Datatypes.INTEGER,
+            allowNull   : false,
+            references  : {
+                model   : 'Utilisateur',
+                key     : 'id',
+                deferrable: sequelize.Deferrable.INITIALLY_IMMEDIATE
+            }
         },
         name	: {
             type    : Datatypes.STRING,
